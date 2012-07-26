@@ -1,0 +1,71 @@
+#issueList #issueListHeader{
+    padding:5px; background:white;
+    color:#999; font-weight:bold;
+    border-bottom: solid #A6C9E2 2px;
+}
+#issueList #issueListBody{position:relative; overflow: auto; background: white;}
+#issueList .issueListItem{ 
+    padding:0.4em 0.4em; font-size:90%; position:relative; font-weight:normal;
+    border-left:none;
+    border-right:none;
+}
+#issueList div.issueListItem{border-color:#A6C9E2;}
+#issueListBody .ui-state-default,
+#issueListBody .ui-state-hover {color:#333;}
+#issueListBody .ui-state-default .line1,
+#issueListBody .ui-state-hover .line1{color:#999;}
+#issueListBody .ui-state-active {color:#E17009;}
+#issueListBody .selected .line1 {color:#333;}
+#issueListBody .selected {color:black;}
+
+#issueList #issueListBody .textMessage{color:#999; padding:10px; text-align:center; }
+#issueList #issueListBody .textMessage span.bold{font-weight:bold; white-space:nowrap; }
+
+/*
+#issueListBody .selected .line1,
+#issueListBody .selected .text {color:white;}
+#issueListBody .selected .description {color:white; font-weight:bold; }
+*/
+
+#issueList .issueListItem .title{ font-size:110%; font-weight:bold; }
+#issueList .issueListItem .line1 .date{font-weight:bold; }
+#issueList .issueListItem .line1,
+#issueList .issueListItem .address{ font-size:75%;}
+#issueList .issueListItem .line1,
+#issueList .issueListItem .address,
+#issueList .issueListItem .description{padding-left:.3em; margin:0;  }
+
+#issueList .issueListItem .description{
+    overflow: hidden; text-overflow:ellipsis; margin-bottom: 0.2em;}
+/*#issueList .issueListItem .description,*/
+#issueList .issueListItem .title,
+#issueList .issueListItem .line1,
+#issueList .issueListItem .address{
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+}
+#issueList .issueListItem .line1{}
+#issueList .issueListItem .address{margin-top:.5em;}
+
+#issueList .issueListItem{background:white;}
+#issueList .issueListItem.mouseover{ cursor:pointer; background-color:#eaf4fd; }
+#issueList div.issueListItem.selected{ background-color:#A6C9E2;}
+
+#issueList .issueListItem .line .left{text-align: left;}
+#issueList .issueListItem .line .right{float:right; text-align: right;}
+#issueList .issueListItem .line .thumbs-container{width:40px;}
+#issueList .issueListItem .line .thumbs-container span{ display:block; float:right;}
+
+/* Issue Type */
+#issueList .issueListItem .line,
+#issueList .issueListItem .description{
+    margin-left:36px;
+}
+
+#issueList .issueListItem {
+    background:url(../../images/markers/info.png?v=0.16) no-repeat 3px 3px;
+}
+
+#issueList #issueListSortByForm{line-height: 0; margin:0; padding:0;}
+#issueListSortBy .ui-button-text{padding:.1em .1em;}

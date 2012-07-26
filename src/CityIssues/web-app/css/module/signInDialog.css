@@ -1,0 +1,56 @@
+#signInDialog{ padding:1.5em 2em 0 2em;}
+
+.signInDialog .field { }
+.signInDialog .footer {padding:0.2em; text-align: center; }
+.signInDialog .footer span.strong{ font-weight:bold; }
+
+.signInDialog .footer a:hover{ text-decoration:underline;  }
+
+
+.signInDialog div.fieldError span.text{width:270px;}
+
+
+.signInDialog form.openid p,
+.signInDialog form.openid .field label{color:black;}
+
+.signInDialog form.openid .haspass p {font-weight:bold;}
+.signInDialog form.openid .haspass label{font-weight:normal;}
+
+.signInDialog .ui-dialog-buttonpane { margin-top:.2px; border-width:0;}
+
+.invalid #signInRememberMeFieldError {display:block;}
+#signInRememberMeFieldError {display:none;}
+button.google-login{
+    cursor:pointer;
+    padding-top:0;
+    padding-left:26px;
+    height:26px;
+    background-image: url(../../images/goog.gif);
+    background-color:#eee;
+    background-repeat: no-repeat;
+    border-width:1px;
+    /*border: solid #ccc 1px;*/
+}
+
+#loginWithGoogleButton { 
+    font-size:100%; border-color:#ccc;
+    
+}
+#loginWithGoogleButton .ui-button-text{
+    
+}
+#loginWithGoogleButton .ui-button-icon-primary{
+    background: url(../../images/goog.gif) no-repeat 0 0;
+    width: 24px;
+    height: 24px;
+    left:.2em;
+    top:40%;
+}
+#loginWithGoogleButton.ui-state-default{
+    color:#333;
+    background-image:url(../../../images/alert-button-default.png);
+}
+#loginWithGoogleButton.ui-state-hover{ 
+    background-image:url(../../../images/alert-button-hover.png);
+}
+#loginWithGoogleButton.ui-state-active{ color:#E17009; background:white;  }

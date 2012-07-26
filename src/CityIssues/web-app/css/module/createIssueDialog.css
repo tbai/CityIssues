@@ -1,0 +1,25 @@
+#createIssueDialog{ padding:1.5em 2em 0 2em;}
+
+#createIssueDialog .field textarea,
+#createIssueDialog .field select{ width:500px; }
+
+#createIssueDialog div.addressField{border-width: 2px;}
+#createIssueDialog div.addressField input.addressField {
+    width:464px;
+    border:none;
+    border-width: 0px;
+    padding: 0;
+    height:28px;
+    line-height:28px;
+    background:white;
+}
+
+
+#createIssueDialog .field .textField{line-height:normal; }
+#createIssueDialog #createIssueCounter.negative{color:#FF8080;}
+#createIssueDialog #createIssueCounter{
+    float:right;
+    color:black;
+    font-weight:normal;
+    color:#999;
+}

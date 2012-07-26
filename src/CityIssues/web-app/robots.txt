@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /help
+Disallow: /login/auth
+Disallow: /user/activate
+Disallow: /login/openIdCreateAccount
+Allow: /public/help
+Allow: /signup
+Allow: /cadastro
+Allow: /login
+Allow: /
+Allow: /ajuda
+

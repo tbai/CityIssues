@@ -1,0 +1,63 @@
+div.selectButton button{height:32px;}
+div.selectButton span.ui-button-text{font-size: 85%;  line-height:32px; padding-top:0; padding-bottom:0;}
+
+div.selectButton li{list-style:none; }
+
+div.selectButton button.active{background:white; z-index:101;}
+
+div.selectButton .selectButtonMenu{position:fixed; z-index:100; padding:10px 10px;}
+div.selectButton input {visibility:visible; z-index:-1; font-size:0; line-height:0;  position:absolute !important;}
+
+div.selectButton .active{background:white;}
+
+div.selectButton ul,
+div.selectButton li {margin:0; background:none; padding:0;}
+
+
+div.selectButton {position:relative;}
+div.selectButton .selectButtonMenu{visibility:hidden; position:absolute; display:block; z-index:-100; }
+div.selectButton .selectButtonMenu.active{visibility:visible; z-index:100; right:1px; top:31px;}
+
+div.selectButton .selectButtonMenu label {
+    white-space: nowrap;
+    border-top:dotted #ddd 1px;
+    display:block; padding:0 20px 0 20px; height:30px; line-height:30px;
+    color:#333; text-decoration:none;
+    cursor:pointer;
+    background-color:white;
+}
+div.selectButton .selectButtonMenu li label.hover{ background-color:#eee; }
+div.selectButton div.selectButtonMenu li label.selected{ background-color:#5C9CCC; color:white; border:none;}
+div.selectButton .selectButtonMenu label.first{border:none;}
+
+/******************************************************************************/
+
+
+/* issue type select button */
+div.issueTypeSelect span.ui-button-text{padding-left:31px;}
+div.issueTypeSelect .selectButtonMenu label {
+    padding:0 20px 0 40px; height:39px; line-height:39px;
+    background-image:url(../../images/markers/all.png?v=0.16);
+    background-repeat:no-repeat;
+    background-position:5px -6px;
+}
+
+
+/* button icon */
+div.issueTypeSelect span.ui-button-icon-primary{ 
+    line-height:28px;
+    left: .2em;
+    background-image:url(../../images/markers/type-sprite.png?v=0.15);
+    width:24px; height:28px; margin-top:-14px; }
+
+
+/******************************************************************************/
+/* button icon 
+#issueDateSelect span.ui-button-icon-primary{ 
+    line-height:28px;
+    left: .2em;
+    width:24px; height:28px; margin-top:-14px; }
+#issueDateSelect span.ui-icon-calendar{
+    background:url(../../images/calendar-blue.png) no-repeat 0px 0;
+}*/
+

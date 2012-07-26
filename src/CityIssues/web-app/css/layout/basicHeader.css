@@ -1,0 +1,41 @@
+body{ font: 85% "Trebuchet MS", sans-serif; }
+img{border-style: none;}
+
+#layoutHeader div.block{
+    padding-left:5px;
+    padding-top:5px;
+    height:55px;
+}
+
+.header-links{
+    padding:0 1em;
+    font-size:12px; 
+}
+#headerlinkSignUp{font-weight:bold; }
+.header-links,
+.header-links span.separator,
+.header-links a{
+    font-size:12px; 
+    font-weight:normal;
+    color:#333;
+    display:inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;}
+.home .header-links .home{
+    display:none;
+}
+.header-links a.email{
+    color:black;
+    font-weight:bold;
+    width: 120px;
+    text-align: right;
+}
+.header-links a.email:hover{text-decoration: none; cursor: default; color:black;}
+.header-links span.separator{color:#999; margin:0 .3em;}
+.header-links a{color:#2E6E9E; text-decoration: none;}
+
+.header-links a:hover{color:#0E4E7E; text-decoration: underline;}
+
+.header-title{padding:10px;}
+.header-title h1{padding:0px; margin:0px; font-size:1.2em;}

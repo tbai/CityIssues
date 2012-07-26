@@ -1,0 +1,183 @@
+import grails.plugins.springsecurity.SecurityConfigType
+
+//
+// // locations to search for config files that get merged into the main config
+// config files can either be Java properties files or ConfigSlurper scripts
+
+// grails.config.locations = [ "classpath:${appName}-config.properties",
+//                             "classpath:${appName}-config.groovy",
+//                             "file:${userHome}/.grails/${appName}-config.properties",
+//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+
+// if(System.properties["${appName}.config.location"]) {
+//    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
+// }
+
+if(!grails.config.locations || !(grails.config.locations instanceof List)) {
+	grails.config.locations = []
+}
+def externalConfigLocation = null
+if(new File("/etc/${appName}/${appName}-config.groovy").exists())
+	externalConfigLocation = "file:/etc/${appName}/${appName}-config.groovy".toString()
+
+grails.config.locations << "classpath:Jawr.groovy"
+
+grails.app.context = "/"
+
+grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
+grails.mime.use.accept.header = false
+grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
+                      xml: ['text/xml', 'application/xml'],
+                      text: 'text/plain',
+                      js: 'text/javascript',
+                      rss: 'application/rss+xml',
+                      atom: 'application/atom+xml',
+                      css: 'text/css',
+                      csv: 'text/csv',
+                      all: '*/*',
+                      json: ['application/json','text/json'],
+                      form: 'application/x-www-form-urlencoded',
+                      multipartForm: 'multipart/form-data'
+                    ]
+
+// URL Mapping Cache Max Size, defaults to 5000
+//grails.urlmapping.cache.maxsize = 1000
+
+// The default codec used to encode data with ${}
+grails.views.default.codec = "none" // none, html, base64
+grails.views.gsp.encoding = "UTF-8"
+grails.converters.encoding = "UTF-8"
+// enable Sitemesh preprocessing of GSP pages
+grails.views.gsp.sitemesh.preprocess = true
+// scaffolding templates configuration
+grails.scaffolding.templates.domainSuffix = 'Instance'
+
+// Set to false to use the new Grails 1.2 JSONBuilder in the render method
+grails.json.legacy.builder = false
+// enabled native2ascii conversion of i18n properties files
+grails.enable.native2ascii = true
+// whether to install the java.util.logging bridge for sl4j. Disable for AppEngine!
+grails.logging.jul.usebridge = true
+// packages to include in Spring bean scanning
+grails.spring.bean.packages = []
+
+cityIssues {
+    defaultLocale = "pt_BR"
+}
+
+grails {
+   mail {
+     host = "smtp.gmail.com"
+     port = 465
+     username = "suricatourbano@gmail.com"
+     password = "senha"
+     props = ["mail.smtp.auth":"true",
+              "mail.smtp.socketFactory.port":"465",
+              "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+              "mail.smtp.socketFactory.fallback":"false"]
+   }
+}
+// set per-environment serverURL stem for creating absolute links
+environments {
+    production {
+        jawr.debug.on = false
+        if( externalConfigLocation ) grails.config.locations << externalConfigLocation
+        grails.serverURL = "http://www.suricatourbano.com.br"
+        facebook {
+            apid = "160470344011966"
+        }
+        broadcast.jobPeriod = 60000 // 1 minutes
+    }
+    development {
+        if( externalConfigLocation ) grails.config.locations << externalConfigLocation
+        grails.serverURL = "http://localhost:8080"
+        jawr.debug.on = true
+        facebook {
+            apid = "160470344011966"
+        }
+        broadcast.jobPeriod = 60000 // 1 minute
+    }
+    test {
+        facebook {
+            apid = "123"
+        }
+        grails.serverURL = "http://localhost:8080"
+        broadcast.jobPeriod = 60000
+    }
+
+}
+
+googleApi.key = "AIzaSyCxPtzmNlLU9TrmFDIJUT_egBGZS9NLGIo"
+geoip.data.path = "/opt/geoip/GeoLiteCity.dat"
+
+// log4j configuration
+log4j = {
+    // Example of changing the log pattern for the default console
+    // appender:
+    //
+    //appenders {
+    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+    //}
+    appenders {
+        'null' name:'stacktrace'         
+        rollingFile  name:'metrics', file: '/var/log/suricato/metrics.log',  maxFileSize:"1MB", layout:pattern(conversionPattern: '%d %-5p [%c{1}] %m%n')
+        rollingFile  name:'jobs',    file: '/var/log/suricato/jobs.log',     maxFileSize:"1MB", layout:pattern(conversionPattern: '%d %-5p [%c{1}] %m%n')
+        //console name:'stdout', layout:pattern(conversionPattern: '%d %-5p [%c] %m%n')
+    }
+
+    info metrics: 'grails.app.controller'
+
+    debug   jobs: 'com.cityissues.jobs'
+            
+    debug   'com.cityissues',
+            'org.grails.mail',
+			'grails.app.service',
+			'grails.app.controller',
+            'ru.perm.kefir.asynchronousmail',
+			'grails.app.domain',
+            'grails.plugins.springsecurity',
+            'org.codehaus.groovy.grails.plugins.springsecurity'
+    
+    error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
+           'org.codehaus.groovy.grails.web.pages', //  GSP
+           'org.codehaus.groovy.grails.web.sitemesh', //  layouts
+           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+           'org.codehaus.groovy.grails.web.mapping', // URL mapping
+           'org.codehaus.groovy.grails.commons', // core / classloading
+           'org.codehaus.groovy.grails.plugins', // plugins
+           'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
+           'org.springframework',
+           'org.hibernate',
+           'net.sf.ehcache.hibernate'
+
+    warn   'org.mortbay.log'
+}
+
+// openid
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/openId/close"
+grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugins.springsecurity.openid.claimedIdentityFieldName = "openid"
+
+grails.plugins.springsecurity.openid.registration.requiredAttributes = [email: 'http://schema.openid.net/contact/email', name: 'http://axschema.org/namePerson/first']
+grails.plugins.springsecurity.openid.registration.optionalAttributes = []
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.cityissues.models.sec.SecUser'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.cityissues.models.sec.SecUserSecRole'
+grails.plugins.springsecurity.authority.className = 'com.cityissues.models.sec.SecRole'
+grails.plugins.springsecurity.openid.domainClass = 'com.cityissues.models.sec.OpenID'
+
+grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
+grails.plugins.springsecurity.interceptUrlMap = [
+    '/issue/delete/**': ['ROLE_USER'],
+    '/issue/save/**': ['ROLE_USER'],
+    '/issue/vote/**': ['ROLE_USER'],
+    '/settings/**': ['ROLE_USER'],
+    '/test/**': ['ROLE_ADMIN'],
+    '/broadcast/**': ['ROLE_ADMIN'],
+    '/adminIssue/**': ['ROLE_ADMIN'],
+    '/issueType/**': ['ROLE_ADMIN'],
+    '/adminUser/**': ['ROLE_ADMIN'],
+    '/admin/**': ['ROLE_ADMIN']
+]

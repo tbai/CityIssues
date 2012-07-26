@@ -1,0 +1,5 @@
+
+#selectAddressDialog .body{/*border-top: solid #ccc 2px;*/}
+#selectAddressDialog .item{ font-size:90%;  font-weight: normal; padding:.5em 0.2em; }
+#selectAddressDialog .item.mouseover{cursor:pointer;}
+#selectAddressDialog .item.selected{}

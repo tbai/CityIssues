@@ -1,0 +1,59 @@
+div.info-window { font-size:90%; width: 300px;}
+div.info-window .date { color:#666;}
+div.info-window .description { margin-top:1em; color:#333; text-overflow: ellipsis; overflow: hidden; }
+div.info-window .address { color:#999; font-size:80%; margin-top:1em; /*text-overflow:ellipsis; overflow:hidden; white-space:nowrap; */ }
+
+div.info-window .footer {text-align: left; border-top: dashed #ddd 1px; padding-top:5px; height:auto;}
+div.info-window .icons-container{text-align:right;}
+div.info-window .link-icon { border: solid transparent 2px; float:right; display:block; width:24px; height:24px; background:url(../../images/34aL_nochadows_001_18.png) no-repeat; }
+
+div.info-window .vote-text { margin:0 5px; display:block; font-weight:bold; line-height:24px; float:right; }
+div.info-window .vote-positive-text { color: darkgreen; }
+div.info-window .vote-negative-text { color: orangered; }
+
+div.info-window .vote-link{ background:url(../../images/thumbs.png) transparent 0 0 no-repeat; }
+div.info-window a.vote-link.selected{cursor: default;}
+div.info-window a.vote-positive{ background-position:0 -68px; }
+div.info-window a.vote-positive:hover{ background-position:0 0px; }
+div.info-window a.vote-positive.selected{ background-position:0 0px; }
+div.info-window a.vote-negative { background-position:0 -170px; }
+div.info-window a.vote-negative:hover{ background-position:0 -102px; }
+div.info-window a.vote-negative.selected { background-position:0 -102px; }
+
+div.info-window a#infoWindowCommentsLink{ color:#2E6E9E; text-decoration:none; }
+div.info-window a#infoWindowCommentsLink:hover{ text-decoration:underline; }
+div.clear{clear:both; font-size:0; line-height:0; height:0;}
+
+.trashIconContainer{
+    float:right;
+}
+
+div.info-window  .footer .owner { text-align:center; /*padding:5px 5px;*/ height:20px; line-height:18px; }
+
+div.info-window .trash-link{background:url(/images/trash-gray.png) transparent 0 0 no-repeat; margin-left:10px;}
+div.info-window a.trash-link:hover{background-image:url(/images/bitcon_trash.gif)}
+
+a.clusterIssueItem {
+    display:block;
+    width:300px;
+    padding-left:42px;
+    background:url(../../images/markers/info.png) no-repeat 3px 3px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    height:42px;
+    line-height:42px;
+    margin-bottom:2px;
+    margin-right:10px;
+    color:#333;
+    text-decoration:none;
+}
+
+a.clusterIssueItem:hover{ background-color: #eee;}
+a.clusterIssueItem.issueType-info { background-image:url(../../images/markers/info.png);}
+a.clusterIssueItem.issueType-trafficcamera { background-image:url(../../images/markers/trafficcamera.png);}
+a.clusterIssueItem.issueType-transportation { background-image:url(../../images/markers/transportation.png);}
+a.clusterIssueItem.issueType-entertainment { background-image:url(../../images/markers/entertainment.png);}
+a.clusterIssueItem.issueType-crime { background-image:url(../../images/markers/crime.png);}
+a.clusterIssueItem.issueType-restaurants { background-image:url(../../images/markers/restaurants.png);}
+

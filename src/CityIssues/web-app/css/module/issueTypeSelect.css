@@ -1,0 +1,52 @@
+#issueTypeSelect button{height:32px;}
+#issueTypeSelect span.ui-button-text{font-size: 85%; padding-left:31px; line-height:32px; padding-top:0; padding-bottom:0;}
+
+
+#issueTypeSelect button.active{background:white; z-index:101;}
+
+#issueTypeSelect .issueTypeSelectMenu{position:fixed; z-index:100; padding:10px 10px;}
+#issueTypeSelect input {visibility:visible; z-index:-1; font-size:0; line-height:0;  position:absolute !important;}
+
+#issueTypeSelect .active{background:white;}
+
+#issueTypeSelect ul,
+#issueTypeSelect li {margin:0; background:none; padding:0;}
+form#ftForm{line-height: 0; padding:0; margin:0;}
+
+#issueTypeSelect .issueTypeSelectMenu label.hover{ background-color:#eee; }
+#issueTypeSelect div.issueTypeSelectMenu label.selected{ background-color:#5C9CCC; color:white; border:none;}
+#issueTypeSelect .issueTypeSelectMenu label {
+    white-space: nowrap;
+    border-top:dotted #ddd 1px;
+    display:block; padding:0 20px 0 40px; height:39px; line-height:39px;
+    color:#333; text-decoration:none;
+    background:url(../../images/markers/all.png?v=0.15) no-repeat white 5px 1px;
+    cursor:pointer;
+}
+
+#issueTypeSelect .issueTypeSelectMenu label.issueType-all{border:none;}
+#issueTypeSelect .issueTypeSelectMenu label.issueType-crime{ background-image:url(../../images/markers/crime.png)}
+#issueTypeSelect .issueTypeSelectMenu label.issueType-info{ background-image:url(../../images/markers/info.png)}
+#issueTypeSelect .issueTypeSelectMenu label.issueType-trafficcamera{ background-image:url(../../images/markers/trafficcamera.png)}
+#issueTypeSelect .issueTypeSelectMenu label.issueType-transportation{ background-image:url(../../images/markers/transportation.png)}
+#issueTypeSelect .issueTypeSelectMenu label.issueType-restaurants{ background-image:url(../../images/markers/restaurants.png)}
+#issueTypeSelect .issueTypeSelectMenu label.issueType-entertainment{ background-image:url(../../images/markers/entertainment.png)}
+
+#issueTypeSelect {position:relative;}
+#issueTypeSelect .issueTypeSelectMenu{visibility:hidden; position:absolute; display:block; z-index:-100; }
+#issueTypeSelect .issueTypeSelectMenu.active{visibility:visible; z-index:100; right:1px; top:31px;}
+
+/* button icon */
+#issueTypeSelect span.ui-button-icon-primary{ 
+    line-height:28px;
+    left: .2em;
+    background-image:url(../../images/markers/type-sprite.png?v=0.15);
+    width:24px; height:28px; margin-top:-14px; }
+#issueTypeSelect span.ui-button-icon-primary,
+#issueTypeSelect.issueType-all button span.ui-button-icon-primary{background-position:-454px 0px;}
+#issueTypeSelect.issueType-info button span.ui-button-icon-primary {background-position:0px 0px;}
+#issueTypeSelect.issueType-crime button span.ui-button-icon-primary {background-position:-76px 0px;}
+#issueTypeSelect.issueType-trafficcamera button span.ui-button-icon-primary {background-position:-152px 0px;}
+#issueTypeSelect.issueType-transportation button span.ui-button-icon-primary {background-position:-228px 0px;}
+#issueTypeSelect.issueType-restaurants button span.ui-button-icon-primary {background-position:-304px 0px;}
+#issueTypeSelect.issueType-entertainment button span.ui-button-icon-primary {background-position:-380px 0px;}

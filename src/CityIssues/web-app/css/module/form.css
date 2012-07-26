@@ -1,0 +1,39 @@
+form.dialogForm .field .fieldLabel{
+    text-align:left;
+    background:none;
+    border:transparent;
+    color:#004276;
+    font-weight: bold;
+}
+
+form.dialogForm a.smallLink{font-size:80%; font-weight:normal; color:#004276; text-decoration:none; }
+form.dialogForm a.smallLink:hover{text-decoration:underline; }
+form span.strong{font-weight:bold; }
+
+form.dialogForm .field .fieldBody{  }
+form.dialogForm .field .fieldError{ clear:both; height:1.5em; }
+form.dialogForm .field textarea,
+form.dialogForm .field .textField,
+form.dialogForm .field select{ width:300px; position:relative; height:2em; line-height:2em; color:#333333; border-width:2px;}
+form.dialogForm .field textarea{ height:6em; line-height:normal;}
+form.dialogForm .field .fieldDesc {font-size:10px; color:#999;}
+
+form.dialogForm .field .ui-state-error{border:none; background:transparent; }
+
+form.dialogForm .field .fieldError{height:auto;}
+
+form.dialogForm .field .fieldError span.clear{clear:both; display:block;}
+
+form.dialogForm .fieldError span.text,
+form.dialogForm .fieldError span.ui-icon{float:left; display:block; font-size:90%; visibility:hidden;}
+
+form.dialogForm .invalid .fieldError span.text,
+form.dialogForm .invalid .fieldError span.ui-icon{visibility:visible;}
+form.dialogForm .field .fieldError span.ui-icon{display:inline-block;}
+
+.wait .ui-dialog-titlebar {background:#C5DBEC; border-color:#C5DBEC;}
+.wait .ui-dialog-buttonpane button{cursor:default;}
+.wait .ui-dialog-title {
+    background: url(../../images/wait.gif) no-repeat 0px 0px;
+    padding-left:25px;
+}

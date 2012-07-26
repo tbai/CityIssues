@@ -1,0 +1,25 @@
+
+body.settingsIndex .content {text-align:center; font-size:90%; padding:1em 0;}
+body.settingsIndex .content .block{ text-align:left; width:900px; margin:auto; }
+body.settingsIndex .content .ui-widget-header {}
+body.settingsIndex .content .clear{clear:both; line-height: 0; font-size: 0; height: 0px;}
+
+body.settingsIndex .content .block .ft,
+body.settingsIndex .content .block .fieldError{
+    margin-left:310px;
+}
+
+body.settingsIndex .content div.field .fieldLabel{
+    width:300px;
+    float:left;
+    text-align:right;
+    padding-right:10px;
+    /*font-weight: normal;*/
+}
+
+body.settingsIndex .content div.formContainer{font-size:90%; padding:1em; margin-top:2em;}
+body.settingsIndex .content .block input{width:300px;}
+body.settingsIndex .content .block div.field{padding-bottom:1em;}
+body.settingsIndex .content .block .header{border-width:0 0 1px 0; background:none; padding:5px 10px;}
+body.settingsIndex .content .block .header .ui-icon{float:left; margin-right:5px;}
+body.settingsIndex #successDialog{padding:2em; text-align:center; }

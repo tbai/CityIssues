@@ -1,0 +1,22 @@
+#signUpDialog{ padding:1em 2em 1em 2em;}
+
+#signUpDialog div.info{color:#666; font-size:90%; margin-bottom:1em; }
+
+#signUpDialog .field { margin-top:.5em; }
+#signUpDialog .footer {margin-top:1em; padding:.2em; font-size:90%; text-align: center;}
+
+#signUpDialog div.info,
+#signUpDialog .field .textField,
+#signUpDialog .field select,
+#signUpDialog .fieldError{ width:400px; }
+
+
+#signUpDialog .field .fieldError{ height:1em; }
+
+
+#signUpDialog .resultMessage{display:none;}
+#signUpDialog.success form{display:none;}
+#signUpDialog.success .resultMessage{display:block;}
+
+#signUpDialog .text-message{ text-align:center;}
+#signUpDialog p.title{font-weight:bold; font-size:110%;}

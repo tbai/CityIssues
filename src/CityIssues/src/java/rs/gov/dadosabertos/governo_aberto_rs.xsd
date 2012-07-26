@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/governo_aberto_rs" xmlns:tns="http://www.example.org/governo_aberto_rs" elementFormDefault="qualified">
+
+    <element name="governo_aberto_rs" type="tns:governoAbertoType"></element>
+    
+    <complexType name="governoAbertoType">
+    	<sequence>
+    		<element name="estatistica_ssp" type="tns:estatisticaSspType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="ocorrEstupro" type="tns:ocorrEstuproType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="estatisticaSspType">
+    	<sequence>
+    		<element name="label" type="tns:tipoEstatType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="tipoEstatType">
+    	<sequence>
+        <element name="nomeTipo" type="string" maxOccurs="1" minOccurs="1"></element>
+        <element name="periodo" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="indicador" type="tns:indicadorType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="indicadorType">
+    	<sequence>
+    		<element name="nomeInd" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="qtde" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+   <complexType name="ocorrEstuproType">
+    	<sequence>
+    		<element name="municOcorr" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="anoOcorr" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="mesOcorr" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="dadosOcorr" type="tns:dadosOcorrType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>        
+    
+    <complexType name="dadosOcorrType">
+     <sequence>
+     		<element name="diaMesOcorr" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="diaSemanaOcorr" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="turnoOcorr" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="horaOcorr" type="string" maxOccurs="1" minOccurs="1"></element>    		
+    		<element name="tentadoConsumado" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="tipoLocal" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="idadeVitima" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="idadeAutor" type="string" maxOccurs="1" minOccurs="1"></element>
+    </sequence>
+    </complexType>
+            
+</schema>

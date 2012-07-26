@@ -1,0 +1,25 @@
+body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px; }
+
+.form-container { margin:10px; width:500px; padding:0.2em; }
+
+.form-container div{ padding-left:0.5em; }
+
+.form-container div.ui-widget-header{ padding: 0.4em 1em; }
+.form-container div.ui-widget-content{ padding-top:2em; }
+
+.buttons-container{}
+
+.field .fieldLabel{
+    /*border: solid black 1px;*/
+    float:left; width:130px; text-align:right;
+    background:none;
+    border:transparent;
+    color:#004276;
+    font-weight: bold;
+}
+
+.field .fieldBody{ float:left; width:200px; }
+.field .fieldError{ clear:both; height:2em; padding-left: 150px; }
+.field .textField { border: solid #999999 1px; background: #eeeeee; }
+.field .textField,
+.field select{ width:300px; height:2em; color:#333333; padding-left:5px; }

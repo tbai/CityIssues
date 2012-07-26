@@ -1,0 +1,14 @@
+
+body.publicHelp .content {text-align:center; font-size:90%; padding:1em 0;}
+body.publicHelp .content .block{ text-align:left; width:900px; margin:auto; }
+body.publicHelp .content .ui-widget-header {}
+body.publicHelp .content .clear{clear:both; line-height: 0; font-size: 0; height: 0px;}
+body.publicHelp .content .block .header{border-width:0 0 1px 0; background:none; padding:5px 10px;}
+body.publicHelp .content .block .header .ui-icon{float:left; margin-right:5px;}
+body.publicHelp .content .body {padding:2em; text-align:justify; color:#333; font-size:1.2em;}
+
+body.publicHelp div.subtitle {margin-top:1em;}
+body.publicHelp div.guide {margin-bottom:3em;}
+
+body.publicHelp div.list {padding-left:1em; color:#333;}
+

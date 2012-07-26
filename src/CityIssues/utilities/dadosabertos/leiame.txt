@@ -1,0 +1,68 @@
+Os dados disponibilizados nos formatos CSV e XML, têm a seguinte estrutura:
+CSV:
+ Nome do campo    Descrição
+ MUNICIPIO        Nome do Município
+ ANOMES           Ano e Mês do fato
+ FATO             Descrição do fato
+ Qtde             Número de ocorrências do fato no período(ANOMES)
+ 
+ 
+ Municipio
+ Ano
+ Mes
+ Dia do Mes
+ Dia da Semana
+ Turno						Madrugada, Manhã, Tarde ou Noite
+ Hora
+ Tentado					Tentado ou Consumado
+ Tipo Local				Residência, Via Publica, Estab.Ensino ou Outros
+ Idade vitima			Idade da vítima em 3 algarismos
+ Idade Autor			Idade do autor em 3 algarismos
+
+Obs.: Arquivos CSV com mais de 65536 linhas não serão carregados completamente em
+programas de planilhas eletrônicas como Excel ou OpenOffice Calc.
+Para estes casos será necessário "dividir" o arquivo origem para o limite supracitado.
+Em ambientes Unix-like, isto pode ser feito com o comando split:
+$split -l 65000 <arquivo.csv> <prefixo>
+
+Para máquinas Windows, uma alternativa para usar comandos Unix:
+http://sourceforge.net/projects/unxutils/
+ 
+ 
+XML:
+  Conforme o schema "governo-aberto_rs.xsd", o XML é formado por 6 objetos:
+  *governoAbertoType   Contem uma lista de 0(zero) a n objetos do tipo "estatisticaSspType" e/ou
+                       lista de 0 (zero) a n objetos do tipo "ocorrEstuproType"
+  *estatisticaSspType  Contem uma lista de 0(zero) a n objetos do tipo "tipoEstatType";
+  *tipoEstatType       Contem uma lista de 0(zero) a n objetos do tipo "indicadorType";  
+  *indicadorType       Objeto que contém o nome e quantide dos indicadores (fatos);
+  *ocorrEstuproType    Objeto que contém a lista de 0 (zero) a n ocorrências de estupro 
+  *dadosOcorrType			 Objeto que contém os dados da ocorrência de estupro
+
+
+Em anexo um exemplo em Java, para consumir o XML, mostrando como popular os objetos 
+"tipoEstatType" e "indicadorType" citados acima, ou seja, uma lista de Tipos (município, período), 
+em que cada Tipo tem sua lista de indicadores (nome e quantidade).      
+  
+
+******* EXEMPLO DE CONSUMO DO XML *******
+Empacotado neste ".zip", encontram-se os seguintes fontes e seus respectivos compilados:
+.\classes\rs\gov\dadosabertos\ConsomeXML.class
+.\classes\rs\gov\dadosabertos\EstatisticaSspED.class
+.\classes\rs\gov\dadosabertos\GovernoAbertoED.class
+.\classes\rs\gov\dadosabertos\IndicadorED.class
+.\classes\rs\gov\dadosabertos\TipoEstatED.class
+.\classes\rs\gov\dadosabertos\OcorrEstuproED.class
+.\classes\rs\gov\dadosabertos\DadosOcorrED.class
+
+Os ".class" que possuem o sufixo "ED", são os objetos descritos no schema XML.
+A classe "ConsomeXML.class" é um exemplo de extração dos dados do XML.
+É necessário uma JRE 1.6 para usá-los.
+Exemplo de uso:
+c:\rs_dados_publicos\classes>java rs.gov.dadosabertos.ConsomeXML "c://documentacao_tecnica//rs_dados_abertos//OcorMunic2010.xml" > saida2010.txt
+
+No exemplo acima a saída foi direcionada para um arquivo, apenas para facilitar a visualização. 
+********************************************
+
+
+PROCERGS - Companhia de Processamento de Dados do Estado do Rio Grande do Sul

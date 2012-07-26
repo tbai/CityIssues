@@ -1,0 +1,23 @@
+#feedbackDialog{ padding:1em 2em 1em 2em;}
+
+#feedbackDialog div.info{color:#666; font-size:90%; margin-bottom:1em; }
+
+#feedbackDialog .field { margin-top:.5em; }
+#feedbackDialog .footer {margin-top:1em; padding:.2em; font-size:90%; text-align: center;}
+
+#feedbackDialog div.info,
+#feedbackDialog .field .textField,
+#feedbackDialog .field select,
+#feedbackDialog .field textarea,
+#feedbackDialog .fieldError{ width:400px; }
+
+
+#feedbackDialog .field .fieldError{ height:1em; }
+
+
+#feedbackDialog .resultMessage{display:none;}
+#feedbackDialog.success form{display:none;}
+#feedbackDialog.success .resultMessage{display:block;}
+
+#feedbackDialog .text-message{ text-align:center;}
+#feedbackDialog p.title{font-weight:bold; font-size:110%;}
