@@ -100,7 +100,7 @@
     <div id="footer" class="ui-widget-header">
       <footer>
       v <bai:appVersion/>
-      <div class="right"><a href="mailto:tiagoxbai@gmail.com">Tiago Bai</a> / <a href="http://www.polistecnologia.com.br/" target="_blank">Polis Tecnologia</a> <!--<a href="#" id="whantToHelpLink">quer ajudar?</a>--></div>
+      <div class="right"><a href="mailto:tiagoxbai@gmail.com">Tiago Bai</a> <!--<a href="#" id="whantToHelpLink">quer ajudar?</a>--></div>
       <div class="clear"></div>
       </footer>
     </div>
